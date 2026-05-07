@@ -26,11 +26,12 @@ MainWindow::MainWindow(QWidget *parent)
     , m_tickCount(0)       // 初始化计数器为0
 {
     setupUI();          // 搭建界面
-    setupConnections(); // 连接信号与槽
 
     // 启动定时器：每100毫秒触发一次（模拟10Hz的传感器数据）
     m_timer = new QTimer(this);  // this表示"这个定时器属于当前窗口"
     m_timer->start(100);         // 开始计时，单位毫秒
+
+    setupConnections(); // 连接信号与槽
 }
 
 // ==================== 搭建界面 ====================
